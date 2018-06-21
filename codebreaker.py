@@ -58,6 +58,10 @@ def listconvert(guess,n):                                                 #List 
     return lt
 
 def startplay():                                                        #startplay function that is in start button command 
+    digitnumber.set(0)
+    guessnumber.set(0)
+    lifenumber.set(0)
+    hintnumber.set(0)
     import random                                                       #In this we get the computer number that user has to guessed 
     digits = []                                                         #computer number will be store in digits
     for i in range(1):
@@ -77,13 +81,12 @@ def continueplay():                                                     #continu
     y = precompnumber.get()                                             # y is storing precompnumber
     #print(y)
     if y != compnumber:
-        if t is 0:
-            if n>=3:
-                lifenumber.set(n-3)
-            else:
-                lifenumber.set(0)
-            precompnumber.set(compnumber)
-            #print(precompnumber.get())
+        if n>=3:
+            lifenumber.set(n-3)
+        else:
+            lifenumber.set(0)
+        precompnumber.set(compnumber)
+        #print(precompnumber.get())
     #print(guess)
     lt=[]
     lt=listconvert(guess,n)                                             #convert user guessed number in list
